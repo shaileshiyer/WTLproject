@@ -1,0 +1,57 @@
+<html>
+<head>
+<style type="text/css">
+
+.tabs {
+  position: fixed;left:500px; 
+  min-height: 200px;
+  clear: both;
+  margin-left: 500px;
+}
+.tab {
+  float: left;
+}
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: 1px; 
+  position: relative;
+  left: 591px; 
+}
+.tab label:hover{background:#B2B2B2}
+.tab [type=radio] {
+  display: none;   
+}
+.content {
+  position: absolute;
+  top: 167px;
+  left: 600px;
+  background-image:url('srzg.jpg');
+  right: 0;
+  bottom: 100px;
+  padding: 20px;
+  border: 1px solid #ccc; 
+}
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}
+ul#ddm {margin:0 200 0 200px;}
+ul.sync a { display:block; color: #fff; font-family: Verdana; font-size: 14px; text-decoration: none;}
+ul.sync, ul.sync li, ul.sync ul { list-style: none; margin: 0; padding: 0; border: 1px solid #fff; background: #555; color: #fff;}
+ul.sync { position: relative;left:200px; z-index: 597; float: left; }
+ul.sync li { float: left; line-height: 1.3em; vertical-align: middle; zoom: 1.5; padding: 5px 10px; }
+ul.sync li:hover { position: relative; z-index: 599; cursor: default; background: #1e7c9a; }
+ul.sync ul { visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 195px; background: #555; border: 1px solid #fff; }
+ul.sync ul li { float: none; }
+ul.sync ul ul { top: -2px; left: 100%; }
+ul.sync li:hover > ul { visibility: visible }
+
+</style>
+</head>
+</html>
