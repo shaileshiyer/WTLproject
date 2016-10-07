@@ -5,8 +5,8 @@ div{
     height: auto;
 }
 .sync{
-    position: static;
-    z-index: 999;
+    position: absolute;
+    z-index: 100;
     width: 100vw;   
 }
 .fixed {
