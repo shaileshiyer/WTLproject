@@ -18,6 +18,15 @@
         </div>
     </li>
     <li><a href="form2.htm">Buy Now</a></li>
+    <?php
+        if (isset($_SESSION["userid"])){
+        echo "<li><a href="logout.php">Logout</a></li>";
+        }
+        else{
+            echo "<li><a href="login.php">Login</a></li>";
+        
+        }
+        ?>
     <li style="float:right;text-align:center;padding-right:20px;"><b>The Gamer</b>
     <img src="img/icon.png" height="48px" width="48px">
     </li>

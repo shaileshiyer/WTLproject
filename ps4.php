@@ -14,16 +14,17 @@ session_start();
     <li><a href="#">Products</a>
         <div class="dropcontent">
        
-           <a href="ps4.htm">PS4</a>
-            <a href="ps3.htm">PS3</a>
-           <a href="psv1.htm">ps Vita</a>
-           <a href="wii.htm">Wii</a>
-           <a href="x1.htm">Xbox one</a>
+           <a href="ps4.php">PS4</a>
+            <a href="ps3.php">PS3</a>
+           <a href="psv1.php">ps Vita</a>
+           <a href="wii.php">Wii</a>
+           <a href="x1.php">Xbox one</a>
         </div>
     </li>
-    <li><a href="form2.htm">Buy Now</a></li>
+    <li><a href="products.php">Shop</a></li>
     <?php 
         if (isset($_SESSION["login"]) && $_SESSION["login"] == "true" ){
+            echo "<li><a href='orderlist.php'>Pending orders</a></li>";
             echo "<li><a href='logout.php'>Logout</a></li>";
         }
         else{
@@ -31,7 +32,7 @@ session_start();
         
         }
     ?>
-    <li style="float:right;text-align:center;padding-right:100px;"><b>The Gamer</b>
+    <li style="float:right;text-align:center;padding-right:20px;"><b>The Gamer</b>
     <img src="img/icon.png" height="48px" width="48px">
     </li>
 </ul>
@@ -44,8 +45,8 @@ color:#fff;" >
     
             
             
-        <a href="form2.htm" class="button">Buy Now</a>
-            </p>    
+        <a href="cart.php?checked=1&id=1&name=Playstation4&cost=349" class="button">Buy Now</a>
+             </p>    
     </div>
     
 <div class="main_content">
