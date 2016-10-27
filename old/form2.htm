@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Form</title>
+    <link rel="stylesheet" type="text/css" href="h1.css">
+</head>
+<body background="#fff">
+<div class="sync" id="navbar">
+    <ul>
+    <li><a href="hompag.htm">Home</a></li>
+    <li><a href="#">Products</a>
+        <div class="dropcontent">
+            <a href="ps2.htm">PS2</a>
+            <a href="ps3.htm">PS3</a>
+            <a href="psv1.htm">ps Vita</a>
+            <a href="wii.htm">Wii</a>
+            <a href="x1.htm">Xbox one</a>
+        </div>
+    </li>
+    <li><a href="form2.htm">Buy Now</a></li>
+    <li style="float:right;text-align:center;padding-right:100px;"><b>The Gamer</b>
+    <img src="img/icon.png" height="48px" width="48px">
+    </li>
+</ul>
+</div>
+    <div class="main_content">
+
+<h1>Online Order Form</h1>
+<hr>
+Please fill in the following details:<br><br>
+First name:<input type="text" name="fir" size="25" maxlength="24"><br><br>
+Last name:<input type="text" name="las" size="25" maxlength="24"><br><br>
+Address:<input type="text" name="add" size="45" maxlength="44"><br><br>
+City:<input type="text" name="cit" size="20" maxlength="19"><br><br>
+State:<input type="text" name="sta" size="19" maxlength="18"><br><br>
+Zip:<input type="text" name="zip" size="7" maxlength="6">
+<hr>
+How would you like to pay for this console?<br><br>
+<select name="credit">
+<option selected value="mast">Mastercard
+<option value="vis">Visa
+<option value="amex">American Express
+<option value="disc">Maestro
+</select><br><br>
+Please enter your card number:<input type="text" name="no" size="11" maxlength="10">
+<hr>
+Please take care that everything is filled up correctly!<br>    <br>
+        <input type="button" value="Reset">
+        <input type="button" value="Submit order">
+    <div class="footer">
+        <hr>
+        <p >All rights reserved The Gamer.Pvt.Ltd</p>
+    </div>
+    </div>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 0) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+</script>
+</body>
+</html>
