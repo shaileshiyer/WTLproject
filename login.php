@@ -61,7 +61,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     
 <div class="main_content">
+    <div class="jumbotron" style="margin:auto;width: 25%;padding-top:10%;padding-bottom:10%;background-color:#fff;">
 
+    <table style="background-color:#eee;padding:10px;">
     <form action="" method="post">
         <tr>
             <td colspan="2"><?php if(isset($_GET["login"])){

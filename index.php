@@ -38,6 +38,7 @@ session_start();
         
         }
     ?>
+    <li style="float:right;text-align:center;padding-right:30px;"><b>The Gamer</b>
     <img src="img/icon.png" height="48px" width="48px">
     </li>
     <li style="float:right;text-align:center;">
