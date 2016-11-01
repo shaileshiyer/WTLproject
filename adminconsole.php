@@ -3,11 +3,13 @@ session_start();
 include("config.php");
 
 if (!isset($_SESSION["type"])){
-    if($_SESSION["type"]!='1')
-    {
+
         echo "<h1>This is an admin only page please login as admin</h1>";
         exit();
-    }
+}
+if ($_SESSION['type']!='1'){
+    echo "<h1>Unauthorized access.Please login as admin or contact admin to view this page</h1>";
+    exit();
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -80,8 +82,7 @@ if ($uploadOk == 0) {
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="h1.css">
-    <SCRIPT>
-
+<SCRIPT>
 function Validateform(){
 	form=document.registration;
 	name=form.t1.value;
@@ -112,26 +113,28 @@ function Validateform(){
 	return true;	
 }
 </SCRIPT>
-
+<script src="jquery.min.js"></script>
+    
 </head>
 <body background="#fff">
 <div class="sync" id="navbar">
-    <ul>
-    <li><a href="hompag.htm">Home</a></li>
+      <ul>
+    <li><a href="index.php">Home</a></li>
     <li><a href="#">Products</a>
         <div class="dropcontent">
        
-           <a href="ps4.htm">PS4</a>
-            <a href="ps3.htm">PS3</a>
-           <a href="psv1.htm">ps Vita</a>
-           <a href="wii.htm">Wii</a>
-           <a href="x1.htm">Xbox one</a>
+           <a href="ps4.php">PS4</a>
+            <a href="ps3.php">PS3</a>
+           <a href="psv1.php">ps Vita</a>
+           <a href="wii.php">Wii</a>
+           <a href="x1.php">Xbox one</a>
         </div>
     </li>
     <li><a href="products.php">Shop</a></li>
     <?php
         
         if (isset($_SESSION["userid"]) && $_SESSION["userid"]!=0 ){
+            echo "<li><a href='orderlist.php'>Pending orders</a></li>";
             
             echo "<li><a href='logout.php'>Logout</a></li>";
              if($_SESSION["type"]=='1'){
@@ -149,7 +152,7 @@ function Validateform(){
     </li>
 </ul>
 </div>
-    <div class="jumbotron"></div>    
+    
 
 <div class="main_content">
   <table align="center" cellpadding="20%">
@@ -210,13 +213,25 @@ function Validateform(){
 	</form>
 </table>
     </div>
+    <div class="jumbotron " style="background: url('img/a2.jpg') center no-repeat ; background-size:cover; padding-top:20%; padding-bottom:20%;"><p></p></div>
     <div class="footer">
         <hr>
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       
     </div>
   
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
-
+       
+    <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 10) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+</script>
 
 </body>
 </html>

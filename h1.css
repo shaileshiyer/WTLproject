@@ -1,13 +1,15 @@
 body{margin:0;
     font-family: sans-serif;
+    
 }
 div{
     height: auto;
 }
 .sync{
-    position: sticky;
+    position: relative;
     z-index: 300;
-    width: 100vw;   
+    width: 100vw;
+    max-width: 100%;
 }
 .fixed {
     position: fixed; 
@@ -77,6 +79,7 @@ li:hover .dropcontent {
 
 .fullwindow{
     height: 100vh;
+    max-width: 100%;
 }
 .jumbotron h1,
 .jumbotron .h1,.jumbotron h3 {

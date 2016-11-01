@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<script src="jquery.min.js"></script>     
 <link rel="stylesheet" type="text/css" href="h1.css">
 </head>
 <body background="#fff">
@@ -98,9 +99,7 @@ color:#fff;" >
         <hr>Copyright 2016-17
         <p >All rights reserved The Gamer.Pvt.Ltd</p>
     </div>
-    </div>
-    
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    </div>   
     <script>
     $(document).ready(function(){
 	   $(window).bind('scroll', function() {

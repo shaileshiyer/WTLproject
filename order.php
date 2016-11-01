@@ -47,7 +47,9 @@ function remove(id,name,cost){
         window.location.href = 'cart.php?checked=0&id='+ id +'&name='+name+'&cost='+cost;
     }
     
-</script>    
+</script>
+<script src="jquery.min.js"></script>     
+    
 </head>
 <body background="#fff">
 <div class="sync" id="navbar">
@@ -80,7 +82,7 @@ function remove(id,name,cost){
 </ul>
 </div>
     
-    <div class="jumbotron"></div>    
+    
 <div class="main_content">
 	<table align="center" cellpadding=20%>
        <form method="post" name="form">
@@ -126,10 +128,10 @@ function remove(id,name,cost){
 
        
        </form>
-        <tr><?php 
+        <tr><td colspan=3 style="text-align:center;"><b><?php 
                 echo 'total cost is ';
                 echo $total['total'];
-            ?></tr>
+            ?></b></td></tr>
     </table>
 <div class="row">
 <form name="orderform" method="post">
@@ -137,9 +139,7 @@ function remove(id,name,cost){
 <hr>
 Please fill in the following details:<br><br>
 name:<input type="text" name="name" size="25" maxlength="24" value="<?php echo $user['name'] ?>"><br><br>
-Address:<textarea name="address" rows="10" cols="60">
-			<?php echo $user['address'] ?>
-			</textarea><br><br>
+Address:<textarea name="address" rows="10" cols="60"><?php echo $user['address']; ?></textarea><br><br>
 City:<input type="text" name="city" size="20" maxlength="19"><br><br>
 State:<input type="text" name="state" size="19" maxlength="18"><br><br>
 Zip:<input type="text" name="zip" size="7" maxlength="6">
@@ -168,6 +168,19 @@ Please take care that everything is filled up correctly!<br>    <br>
     </form>
     </div>
     </div>
+    <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 0) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+    
+    </script>
 	<div class="footer">
         <hr>
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       

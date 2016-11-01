@@ -6,6 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<script src="jquery.min.js"></script>       
 <link rel="stylesheet" type="text/css" href="h1.css">
 </head>
 <body background="#fff">
@@ -37,13 +38,15 @@ session_start();
         
         }
     ?>
-    <li style="float:right;text-align:center;padding-right:20px;"><b>The Gamer</b>
     <img src="img/icon.png" height="48px" width="48px">
     </li>
+    <li style="float:right;text-align:center;">
+        <a href="about.html">About Us</a>    
+    </li>    
 </ul>
 </div>
     
- <div class="jumbotron fullwindow" style="background: url('img/gamer.jpg') center;
+ <div class="jumbotron fullwindow" style="background: url('img/gamer.jpg') center;background-size:contain;
 z-index:-1;color:#fff;" >
         <h1>Welcome to the worlds best seller for consoles</h1>
         <p class="below">We got some exciting offers for this holiday season so wait for them.Let the console wars begin.</p>
@@ -66,7 +69,7 @@ z-index:-1;color:#fff;" >
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       
     </div>
   
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+     
     <script>
     $(document).ready(function(){
 	   $(window).bind('scroll', function() {
