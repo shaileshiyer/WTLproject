@@ -2,6 +2,9 @@
 session_start();
 include('config.php');
 
+if (!isset($_SESSION["login"])){
+    header('location: login.php?login=0');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,6 +41,10 @@ function remove(id,name,cost){
         if (isset($_SESSION["login"]) && $_SESSION["login"] == "true" ){
             echo "<li><a href='orderlist.php'>Pending orders</a></li>";
             echo "<li><a href='logout.php'>Logout</a></li>";
+             if($_SESSION["type"]=='1'){
+                echo "<li><a href='adminconsole.php'>Admin Panel</a></li>";
+                
+            }
         }
         else{
             echo "<li><a href='login.php'>Login</a></li>";
@@ -102,7 +109,7 @@ else
    <table align="center" cellpadding=20%>
        <form method="GET" name="form1">
        <tr>
-           <th>id</th>
+           <th>image</th>
            <th>name</th>
            <th>description</th>
            <th>cost</th>
@@ -118,7 +125,7 @@ else
     {
 				
 				echo '<tr>';
-                echo '<td>'.$row['prodid'].'</td>';
+                echo "<td><image src='img/".$row['productimage']."' height='300' width='300'></td>";
 				echo '<td>'.$row['productname'].'</td>';
                 echo '<td>'.$row['description'].'</td>';
 				echo '<td>'.$row['cost'].'</td>';

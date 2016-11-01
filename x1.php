@@ -21,11 +21,15 @@ session_start();
            <a href="x1.php">Xbox one</a>
         </div>
     </li>
-    <li><a href="form2.htm">Buy Now</a></li>
+    <li><a href="products.php">Shop</a></li>
     <?php 
         if (isset($_SESSION["login"]) && $_SESSION["login"] == "true" ){
             echo "<li><a href='orderlist.php'>Pending orders</a></li>";
             echo "<li><a href='logout.php'>Logout</a></li>";
+             if($_SESSION["type"]=='1'){
+                echo "<li><a href='adminconsole.php'>Admin Panel</a></li>";
+                
+            }
         }
         else{
             echo "<li><a href='login.php'>Login</a></li>";

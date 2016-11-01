@@ -5,7 +5,7 @@ div{
     height: auto;
 }
 .sync{
-    position: absolute;
+    position: sticky;
     z-index: 300;
     width: 100vw;   
 }
@@ -163,4 +163,11 @@ a.button{
 .colimage{
     width:300px;
     height:auto;
+}
+
+.danger {
+  background-color: #d9534f;
+}
+.info {
+  background-color: #afd9ee;
 }

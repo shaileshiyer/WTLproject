@@ -68,6 +68,10 @@ function remove(id,name,cost){
         if (isset($_SESSION["login"]) && $_SESSION["login"] == "true" ){
             echo "<li><a href='orderlist.php'>Pending orders</a></li>";
             echo "<li><a href='logout.php'>Logout</a></li>";
+            if($_SESSION["type"]=='1'){
+                echo "<li><a href='adminconsole.php'>Admin Panel</a></li>";
+                
+            }
         }
         else{
             echo "<li><a href='login.php'>Login</a></li>";
