@@ -47,7 +47,8 @@ function remove(id,name,cost){
         window.location.href = 'cart.php?checked=0&id='+ id +'&name='+name+'&cost='+cost;
     }
     
-</script>    
+</script>
+<script src="jquery.min.js"></script>        
 </head>
 <body background="#fff">
 <div class="sync" id="navbar">
@@ -83,8 +84,7 @@ function remove(id,name,cost){
     </li>
 </ul>
 </div>
-    
-    <div class="jumbotron"></div>    
+   
 <div class="main_content">
 	<table align="center" cellpadding=20%>
        <tr>
@@ -127,6 +127,19 @@ function remove(id,name,cost){
         echo 'Mobile :'.$user['mobile'].'<br>';
         ?>
     </div>
+     <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 0) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+    
+</script>
 	<div class="footer">
         <hr>
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       

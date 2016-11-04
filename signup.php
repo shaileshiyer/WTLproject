@@ -78,7 +78,8 @@ function Validateform(){
 	return true;	
 }
 </SCRIPT>
-
+<script src="jquery.min.js"></script>    
+    
 </head>
 <body background="#fff">
 <div class="sync" id="navbar">
@@ -104,7 +105,7 @@ function Validateform(){
     </li>
 </ul>
 </div>
-    <div class="jumbotron"></div>    
+      
 
 <div class="main_content">
   <table align="center" cellpadding="20%">
@@ -175,8 +176,19 @@ function Validateform(){
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       
     </div>
   
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
-
+        <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 0) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+    
+</script>
 
 </body>
 </html>

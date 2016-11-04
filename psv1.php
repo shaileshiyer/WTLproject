@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<script src="jquery.min.js"></script>     
 <link rel="stylesheet" type="text/css" href="h1.css">
 </head>
 <body background="#fff">
@@ -44,7 +45,7 @@ session_start();
     
         <div class="jumbotron fullwindow" style="background: url('img/7.jpg') center;background-size:cover;
 color:#fff;" >
-        <font style="Verdana" color="red"><h1><u>Introducing the all new Sony PS Vita,</u></h1>
+        <font style="Verdana" color="white"><h1><u>Introducing the all new Sony PS Vita,</u></h1>
         <p class="below">Price starts from $200 only.</font>
     
             
@@ -100,7 +101,7 @@ color:#fff;" >
     </div>
     </div>
     
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+
     <script>
     $(document).ready(function(){
 	   $(window).bind('scroll', function() {

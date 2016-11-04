@@ -9,6 +9,7 @@ if (!isset($_SESSION["login"])){
 <!DOCTYPE html>
 <html>
 <head>
+<script src="jquery.min.js"></script>           
 <link rel="stylesheet" type="text/css" href="h1.css">
 <script>
 
@@ -56,10 +57,7 @@ function remove(id,name,cost){
     </li>
 </ul>
 </div>
-<div class="row">
-    <div class="jumbotron">
-    </div>
-    </div>
+
     
 <div class="main_content">
     <div class="row">
@@ -151,6 +149,19 @@ else
        </form>
     </table>   
     </div>
+     <script>
+    $(document).ready(function(){
+	   $(window).bind('scroll', function() {
+			 if ($(window).scrollTop() > 0) {
+				 $('#navbar').addClass('fixed');
+			 }
+			 else {
+				 $('#navbar').removeClass('fixed');
+			 }
+		});
+	});
+</script>
+
     <div class="footer">
         <hr>
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       
