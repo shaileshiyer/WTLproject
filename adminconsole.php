@@ -11,6 +11,17 @@ if ($_SESSION['type']!='1'){
     echo "<h1>Unauthorized access.Please login as admin or contact admin to view this page</h1>";
     exit();
 }
+if (isset($_GET["product"])){
+    $id=$_GET["product"];
+    $sqli="DELETE FROM products WHERE prodid='".$id."'";
+    $result=mysqli_query($db_conn,$sqli);
+    if(mysqli_affected_rows($db_conn)){
+        $error="DELETE product id ".$id."successfully done";
+    }
+    else{
+        $error="DELETE product id ".$id." failed";
+    }
+}
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 $error="";
@@ -66,7 +77,7 @@ if ($uploadOk == 0) {
         if($result){
             $error = $error.' Successfully entered record';
         }
-            mysqli_close($db_conn);
+            
         }
      else {
         $error = $error." Sorry, there was an error uploading your file.";
@@ -83,35 +94,7 @@ if ($uploadOk == 0) {
 <head>
 <link rel="stylesheet" type="text/css" href="h1.css">
 <SCRIPT>
-function Validateform(){
-	form=document.registration;
-	name=form.t1.value;
-	if(name=="")
-	{	
-		alert("Name field cannot be null");
-		return false;
-	}
-	
-	mobile=form.t2.value;
-	
-	if(mobile.length!=10)
-	{
-		alert("Please Enter a valid mobile number");
-		return false;
-	}
-	
-	
-	pass=form.p1.value;
-	n=pass.length;
-	console.log(n);
-	if (pass=="" || n<6 ) 
-	{
-		alert("Enter a Valid Password of length atleast 6 ");
-		return false;
-	}
-	
-	return true;	
-}
+
 </SCRIPT>
 <script src="jquery.min.js"></script>
     
@@ -213,7 +196,26 @@ function Validateform(){
 	</form>
 </table>
     </div>
-    <div class="jumbotron " style="background: url('img/a2.jpg') center no-repeat ; background-size:cover; padding-top:20%; padding-bottom:20%;"><p></p></div>
+    <div style="margin:auto;padding-left:23%;padding-bottom:10px;">
+        <h3>Delete Products</h3><br>
+        <form name="deleteproduct" method="get">
+        <select name="product">
+        <?php 
+            $sqli="SELECT * FROM products";
+            $result= mysqli_query($db_conn,$sqli);
+            while($row=mysqli_fetch_assoc($result)){
+                echo "<option value='".$row['prodid']."'>".$row['productname']."</option>";
+            }
+            
+        ?>
+        </select>
+        <input type="submit" value="delete">
+        </form> 
+        <br>
+    </div>
+    <?php 
+        mysqli_close($db_conn);
+    ?>
     <div class="footer">
         <hr>
         <p >All rights reserved The Gamer.Pvt.Ltd</p>       

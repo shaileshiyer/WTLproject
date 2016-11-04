@@ -6,8 +6,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+
 <script src="jquery.min.js"></script>       
 <link rel="stylesheet" type="text/css" href="h1.css">
+
 </head>
 <body background="#fff">
 <div class="sync" id="navbar">
@@ -49,20 +51,28 @@ session_start();
     
 <div class="slider">
 <figure>
-<div class="img-slider jumbotron fullwindow" style="background: url('img/gamer.jpg') center;background-size:contain;
-z-index:-1;color:#fff;" >
+    
+<div class="img-slider jumbotron fade" style="background: url('img/gamer.jpg') center;background-size:contain;
+z-index:-1;color:#fff; " >
         
     <p>Welcome to the worlds best seller for consoles</p>
        <p class="below">
             We got some exciting offers for this holiday season so wait for them.Let the console wars begin.</p>
-    </div>
-
-<img class="img-slider" src="img/diwali1.jpg">
-<img class="img-slider" src="img/tlou.jpg" style="background-size:cover;" alt>
-<img class="img-slider" src="img/xbcover.jpg" alt>
-
-</figure>
 </div>
+<img class="img-slider fade" src="img/diwali1.jpg">
+<img class="img-slider fade" src="img/tlou.jpg" alt>
+<img class="img-slider fade" src="img/xbcover.jpg" alt>
+</figure>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(0)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+
+
+
 
     
  
@@ -98,6 +108,34 @@ z-index:-1;color:#fff;" >
 		});
 	});
 </script>
+<script>
+var slideIndex = 0;
+showSlides();
+function currentSlide(n) {
+    slideIndex=n;
+   
+}
+
+function showSlides(n) {
+    var i;
+    
+    var slides = document.getElementsByClassName("img-slider");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+     // Change image every 2 seconds
+    setTimeout(showSlides, 5000);
+}
+</script>    
 
 </body>
 </html>

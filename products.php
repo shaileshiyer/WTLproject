@@ -14,7 +14,6 @@ if (!isset($_SESSION["login"])){
 <script>
 
 function addtocart(id,name,cost){
-        console.log("entered JS");
         window.location.href = 'cart.php?checked=1&id='+ id +'&name='+name+'&cost='+cost;
     }
 function remove(id,name,cost){
@@ -65,7 +64,7 @@ function remove(id,name,cost){
        <form method="GET" name="form">
        <tr>
            <th>name</th>
-           <th>cost</th>
+           <th>cost ($)</th>
            <th>remove to cart</th>
        </tr>
     <?php 
@@ -110,7 +109,7 @@ else
            <th>image</th>
            <th>name</th>
            <th>description</th>
-           <th>cost</th>
+           <th>cost ($)</th>
            <th>add to cart</th>
        </tr>
     <?php 

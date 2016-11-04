@@ -27,6 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 //echo $address;    
                 //$sql="INSERT INTO users VALUES (0,'$username','$password','$name','$address','$mobile')";
                 $sql="INSERT INTO orderstable(orderlist,userid,address,totalcost,city,state,zip,cardtype) VALUES ('$orderlist','$userid','.$address.','$totalcost','$city','$state','$zip','$cardtype')";
+                echo $sql;
                 $orderid=mysqli_query($db_conn,$sql);
                 $sql="SELECT MAX(orderno) AS orderno FROM orderstable WHERE userid='$userid'";
                 $orderid=mysqli_query($db_conn,$sql);
@@ -163,7 +164,7 @@ Please enter your card number:<input type="text" name="cardno" size="20" maxleng
 <hr>
 Please take care that everything is filled up correctly!<br>    <br>
         <input type="button" value="Reset"/>
-        <input type="submit" value="Submit order"/>
+        <input type="submit" value="Submit order"/><br>
            <?php
             if($_SERVER["REQUEST_METHOD"] == "POST")
             {
